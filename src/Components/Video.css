@@ -1,0 +1,21 @@
+.Video-container{
+    position: absolute;
+    left: 10vw;
+    top:85vh;
+    width: 80vw;
+    height: 30vh;
+    background-color: #f9f9f8;
+    border-radius: 20vw;
+}
+
+
+.Vid{
+    position: relative;
+    left: 0.5vw;
+    top: 1vh;
+    width: 79vw;
+    height: 28vh;
+    background-color: saddlebrown;
+    border-radius: 20vw;
+    object-fit: cover;
+}

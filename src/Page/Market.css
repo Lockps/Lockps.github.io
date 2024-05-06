@@ -1,0 +1,28 @@
+.Market-Container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #242424;
+    position: relative;
+  }
+  
+.Mar-Text {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    color:red;
+    font-weight: 450;
+  }
+  
+  .Mar-item-Grid {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    width: 90%;
+    height: 60%;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
+    grid-row-gap:10vh ;
+  }
+  

@@ -1,0 +1,43 @@
+.Pre-Container{
+    width: 80vw;
+    height: 80vh;
+    background-color: transparent;
+    display: flex;
+}
+
+.Pre-pic{
+    width: 40%;
+}
+
+.Pre-Text1{
+    margin-bottom: 0;
+    font-weight: 350;
+    color: black;
+}
+
+.Pre-Text2{
+    margin-top: 0;
+    font-weight: 350;
+    margin-bottom: 0;
+    color: black;
+}
+
+.Space1{
+    width: 2vw;
+}
+
+.Pre-parem{
+    margin-top: 5%;
+    width: 65%;
+    color: #9c9c9c;
+}
+
+.Pre-pic2{
+    position: absolute;
+    width: 45%;
+    bottom: 0;
+}
+
+.Pre-right-Text{
+    transform: translateY(-5vh);
+}

@@ -1,0 +1,122 @@
+.Col-Container{
+    width: 90vw;
+    height: 80vh;
+    background-color: #e9e9e9;
+    display: flex;
+}
+
+
+.sug-pic {
+    position: absolute;
+    width: 20%; /* Adjust width to fit the container */
+    height: 50%; /* Adjust height to fit the container */
+    left: 5%;
+    top: 10%;
+    background-color: salmon;
+    border-radius: 20px;
+    overflow: hidden; /* Ensure image does not overflow the div */
+}
+
+.sug-pic img {
+    width: 100%; /* Make sure the image fills the div */
+    height: 100%; /* Make sure the image fills the div */
+    object-fit: cover; /* Maintain aspect ratio and cover the div */
+}
+
+
+.sug-title{
+    width: 20%;
+    text-align: center;
+    position: absolute;
+    left: 5%;
+    top: 60%;
+    color: #767676;
+    font-size: 3vh;
+}
+
+.sug-price{
+    position: absolute;
+    left: 13%;
+    top: 65%;
+    color: #767676;
+    font-size: 3vh;
+}
+
+.sug-text{
+    position: absolute;
+    left: 30%;
+    top: 5%;
+    color: black;
+    font-size: 8vh;
+}
+
+.sug-text2{
+    position: absolute;
+    left: 30%;
+    top: 15%;
+    color: black;
+    font-size: 8vh;
+}
+
+.Sug-Purchase{
+    position: absolute;
+    top: 75%;
+    left: 10.5%;
+    width: 8%;
+    height: 6%;
+    border-radius: 40px;
+    background-color: whitesmoke;
+    text-align: center;
+    cursor: pointer;
+    text-align: center; 
+    border: 1px solid #767676 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #767676;
+    transition: background-color 0.5s ease;
+}
+
+.Sug-Purchase:hover{
+    color: white;
+    background-color: #767676;
+}
+
+.sug-style{
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    width: 32%;
+    height: 40%;
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+
+.sug-style2{
+    position: absolute;
+    top: 10%;
+    left: 65%;
+    width: 20%;
+    height: 50%;
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+
+.sug-style3{
+    position: absolute;
+    top: 57%;
+    left: 75%;
+    width: 20%;
+    height: 30%;
+    background-color: aqua;
+    border-radius: 10px;
+    /* animation: tranX 30s ease-n-out infinite; */
+}
+
+@keyframes tranX{
+    0%, 100%{
+        left: 75%;
+    }50%{
+        left: 70%;
+    }
+}

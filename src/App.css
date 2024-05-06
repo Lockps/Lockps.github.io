@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Rock+Salt&display=swap');
+
+body{
+  font-family: 'Fraunces', sans-serif;
+}
+html{
+  overflow-x: hidden;
+}
+
+
+.Container{
+  padding: 0;
+  margin: 0;
+  height: 430vh;
+  width: 100vw;
+  background-color: whitesmoke;
+}
+
+.Logo {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.Show-model{
+  position: relative;
+  display: flex;
+  background-color: rgb(18, 18, 18);
+  width: 100vw;
+  height: 90vh;
+  top: 8vh;
+}
+
+@keyframes move{
+  0%{
+    top: 2vh;
+  }30%{
+    top: 6vh;
+  }
+  70%{
+    top: 4vh;
+  }100%{
+    top :2vh
+  }
+}
+
+.pic {
+  position: absolute;
+  right: 0px;
+  width: 40vw;
+  height: 120vh;
+  animation: move ease-in-out 8s infinite;
+}
+
+.pic img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.Col{
+  position: absolute;
+  top: 130vh;
+  left: 5vw;
+}
+
+.Pre{
+  position: absolute;
+  top: 220vh;
+  left: 15%;
+}
+
+.Pro{
+  position: absolute;
+  top: 310vh;
+  left: 10vw;
+}
+
+.Foot{
+  position: absolute;
+  top: 400vh;
+
+}
