@@ -3,7 +3,9 @@ package main
 import (
 	"database/sql"
 	"encoding/json"
+	"fmt"
 	"net/http"
+	"strconv"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/cors"
@@ -20,15 +22,16 @@ func (app *application) route() http.Handler {
 	r := chi.NewRouter()
 
 	cors := cors.New(cors.Options{
-		AllowedOrigins:   []string{"*"}, // Change this to the allowed origins
+		AllowedOrigins:   []string{"*"},
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
 		AllowCredentials: true,
-		MaxAge:           300, // Maximum value not ignored by any of major browsers
+		MaxAge:           300,
 	})
 
-	// Use CORS middleware
 	r.Use(cors.Handler)
+
+	r.Post("/Add", insertShoe)
 
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		db, err := sql.Open("mysql", "root:Lock25852@tcp(127.0.0.1:3306)/shoe_shop")
@@ -70,4 +73,44 @@ func (app *application) route() http.Handler {
 		w.Write(jsonData)
 	})
 	return r
+}
+func insertShoe(w http.ResponseWriter, r *http.Request) {
+	shoe := shoe{}
+	if err := r.ParseForm(); err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+	shoe.Name = r.FormValue("name")
+
+	price, err := strconv.ParseFloat(r.FormValue("price"), 32)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+	shoe.Price = float32(price)
+
+	shoe.URL = r.FormValue("url")
+
+	db, err := sql.Open("mysql", "username:password@tcp(localhost:3306)/database_name")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	defer db.Close()
+
+	stmt, err := db.Prepare("INSERT INTO shoe (name, price, url) VALUES (?, ?, ?)")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	defer stmt.Close()
+
+	_, err = stmt.Exec(shoe.Name, shoe.Price, shoe.URL)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	w.WriteHeader(http.StatusCreated)
+	fmt.Fprintf(w, "Shoe inserted successfully")
 }

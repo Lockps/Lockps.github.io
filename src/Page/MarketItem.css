@@ -1,0 +1,51 @@
+/* MarketItem.css */
+
+.market-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 90%;
+  }
+  
+  .item-image img {
+    width: 100%;
+    max-width: 200px; /* Adjust as needed */
+    height: auto;
+    border-radius: 20px;
+  }
+  
+  .item-details {
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .item-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .item-details p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .buy-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buy-button:hover {
+    background-color: #0056b3;
+  }
+  

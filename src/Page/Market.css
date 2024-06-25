@@ -1,28 +1,157 @@
-.Market-Container {
-    width: 100vw;
-    height: 100vh;
-    background-color: #242424;
-    position: relative;
+@import url('https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&display=swap');
+
+.Market-Item-Grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  column-gap: 10px;
+}
+
+.Mar-Pro{
+  /* background-color: #e9e9e9; */
+  color: #272727;
+  position: relative;
+  top: 5vh;
+  font-size: 5vh;
+  font-weight: 200;
+  font-family: "Briem Hand", cursive;
+  margin-bottom: 10vh;
+  margin-top: 5vh;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.Market-Item-Grid::after {
+  content: "";
+}
+
+.Market{
+  background-color: white;
+}
+
+.Market-Slide{
+  display: flex;
+  position: relative;
+  top: 8vh;
+  width: 100vw;
+  height: 40vh;
+  background-color: #272727;
+}
+.Market-Container{
+  width: 100vw;
+  height: 200vh;
+  background-color: white;
+  display: flex;
+}
+
+.Market-Select{
+  position: absolute;
+  top: 48vh;
+  width: 30vw;
+  height: 100%;
+  background-color:#e9e9e9;
+  border-radius: 0px 20px 20px 0px;
+}
+
+.Market-Item-Box{
+  margin-left: auto;
+  width: 70%;
+  height: 100%;
+  background-color: white;
+}
+
+.Mar-img-Box{
+  position: relative;
+  width: 30%;
+  background-color: transparent;
+  height: 100%;
+  animation:  move1 5s infinite;
+}
+
+.Mar-img-Box img{
+  width: 100%;
+  transform: scaleX(-1);
+}
+
+@keyframes move1{
+  0%, 100%{
+    top: 0vh;
+  }50%{
+    top: 3vh;
   }
+}
+.Mar-Textcon{
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.Mar-Text{
+  width: 40vw;
+  position: relative;
+  font-size: 15vh;
+  font-weight: 500;
+  color: wheat;
   
-.Mar-Text {
-    position: absolute;
-    top: 15%;
-    left: 5%;
-    color:red;
-    font-weight: 450;
+}
+
+.Mar-Text::before{
+  background: -webkit-linear-gradient(#2e9dc9, #a3e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-right: 2px solid #2e9dc9;
+  overflow: hidden;
+  animation: MarText 10s infinite, glow1 5s infinite ;
+}
+
+@keyframes MarText{
+  0%, 100%{
+    width: 0%;
   }
-  
-  .Mar-item-Grid {
-    position: absolute;
-    top: 25%;
-    left: 5%;
-    width: 90%;
-    height: 60%;
-    background-color: transparent;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 20px;
-    grid-row-gap:10vh ;
+  50%{
+    width: 100%;
   }
-  
+}
+
+@keyframes glow1{
+  0%{
+      
+  }
+  50%{
+    text-shadow: 0 0 10px white;
+  }100%{
+  }
+}
+
+.Search-Text{
+  position: absolute;
+  font-size: 5vh;
+  color: #272727;
+  left: 1.2vw;
+}
+
+.search{
+  position: absolute;
+  top: 12vh;
+  left: 1vw;
+  border-radius: 30px;
+  background-color:aliceblue;
+  color: #272727;
+  width: 24vw;
+  height: 5vh;
+  padding-left: 2vw;
+}
+
+.Mar-Icon{
+  position: absolute;
+  top: 13.7vh;
+  left: 1.7vw;
+  color: #272727;
+  z-index: 10000;
+}

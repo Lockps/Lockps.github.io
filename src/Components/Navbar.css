@@ -27,7 +27,7 @@
     height: 100%;
     width: 30%;
     align-items: center;
-    transform: translateX(-12px);
+    transform: translateX(1px);
 }
 
 .Func h3{

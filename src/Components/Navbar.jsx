@@ -3,37 +3,37 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const scrollToTop = () =>{
+  const scrollToTop = () => {
     window.scrollTo({
-      top:0,
-      behavior:"smooth"
-    })
-  }
-  const scrollToBot = () =>{
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  const scrollToBot = () => {
     window.scrollTo({
       top: document.documentElement.scrollHeight,
-      behavior:"smooth"
-    })
-  }
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="Nav">
       <Link to="/">
-      <div className="Logo">CPE-SWU</div>
+        <div className="Logo">Sole-Haven</div>
       </Link>
       <div className="Space"></div>
       <div className="Func">
         <Link to="/" onClick={scrollToTop}>
-        <h3>Home</h3>
+          <h3>Home</h3>
         </Link>
-      <Link to="/MarketPlace">
-        <h3>Shop</h3>
-      </Link>
-      <Link to = "/" onClick={scrollToBot}>
-        <h3>About me</h3>
-      </Link>
+        <Link to="/MarketPlace">
+          <h3>Shop</h3>
+        </Link>
+        <Link onClick={scrollToBot}>
+          <h3>About me</h3>
+        </Link>
       </div>
       <div className="Space"></div>
-      <div className="User">asd</div>
+      <div className="User">CPE-204</div>
     </div>
   );
 };

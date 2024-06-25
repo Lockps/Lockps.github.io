@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 )
@@ -18,5 +19,5 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
+	fmt.Print("Server Started!")
 }
